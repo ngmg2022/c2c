@@ -1,4 +1,4 @@
-# [Channel Auto-Post Bot](https://telegra.ph/file/1eca514b5e6202b1d92b3.jpg)
+# ![Channel Auto-Post Bot](https://telegra.ph/file/1eca514b5e6202b1d92b3.jpg)
 
 This bot can send all new messages from one channel, directly to another channel (or group, just in case), without the forwarded tag!
 
