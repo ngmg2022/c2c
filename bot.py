@@ -14,6 +14,7 @@ try:
     bottoken = config("BOT_TOKEN")
     frm = config("FROM_CHANNEL", cast=int)
     tochnl = config("TO_CHANNEL", cast=int)
+    tochnl2 =config("TO_CHANNEL2",cast=int)
     datgbot = TelegramClient('bot', apiid, apihash).start(bot_token=bottoken)
 except:
     print("Environment vars are missing! Kindly recheck.")
@@ -36,7 +37,7 @@ async def helpp(event):
 async def _(event): 
     if not event.is_private:
         try:
-            await event.client.send_message(tochnl, event.message)
+            await event.client.send_message(tochnl,tochnl2,event.message)
         except:
             print("TO_CHANNEL ID is wrong or I can't send messages there (make me admin).")
 
