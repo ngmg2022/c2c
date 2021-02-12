@@ -16,7 +16,7 @@ This bot can send all new messages from one channel, directly to another channel
 
 # Need To Add More Channles Contact me  👇
 
-[Lasiya](t.me/Danuma_admin_bot)
+## [Lasiya](t.me/Danuma_admin_bot)
 
 * Chose a platform to deploy on:
 
