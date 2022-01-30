@@ -15,7 +15,9 @@ try:
 
 
     frm1 = config("FROM_CHANNEL1", cast=int)
+    frm2 = config("FROM_CHANNEL2", cast=int)
     tochnl1 = config("TO_CHANNEL1", cast=int)
+    tochnl2 = config("TO_CHANNEL2", cast=int)
 
 
     datgbot = TelegramClient('bot', apiid, apihash).start(bot_token=bottoken)
@@ -36,11 +38,21 @@ async def _(event):
 async def helpp(event):
     await event.reply("**Help**\n\nThis bot will send all new posts in one channel to the other channel (without forwarded tag).\nIt can be used only in two channels at a time, \n\nAdd me to both the channels and make me an admin in both, and all new messages would be autoposted on the linked channel!\n\nLiked the bot? Drop a ♥Danuma projectject")
 
+@datgbot.on(events.NewMessage(incoming=True, chats=frm2)) 
+async def _(event): 
+    if not event.is_private:
+        try:
+            await event.client.send_message(tochnl1,tochnl2, event.message)
+        except:
+            print("TO_CHANNEL ID is wrong or I can't send messages there (make me admin).")
+
+
+            
 @datgbot.on(events.NewMessage(incoming=True, chats=frm1)) 
 async def _(event): 
     if not event.is_private:
         try:
-            await event.client.send_message(tochnl1, event.message)
+            await event.client.send_message(tochnl1,tochnl2, event.message)
         except:
             print("TO_CHANNEL ID is wrong or I can't send messages there (make me admin).")
 
