@@ -42,19 +42,34 @@ async def helpp(event):
 async def _(event): 
     if not event.is_private:
         try:
-            await event.client.send_message(tochnl1,tochnl2, event.message)
+            await event.client.send_message(tochnl1, event.message)
         except:
             print("TO_CHANNEL ID is wrong or I can't send messages there (make me admin).")
 
-
+@datgbot.on(events.NewMessage(incoming=True, chats=frm2)) 
+async def _(event): 
+    if not event.is_private:
+        try:
+            await event.client.send_message(tochnl2, event.message)
+        except:
+            print("TO_CHANNEL ID is wrong or I can't send messages there (make me admin).")
             
 @datgbot.on(events.NewMessage(incoming=True, chats=frm1)) 
 async def _(event): 
     if not event.is_private:
         try:
-            await event.client.send_message(tochnl1,tochnl2, event.message)
+            await event.client.send_message(tochnl1, event.message)
         except:
             print("TO_CHANNEL ID is wrong or I can't send messages there (make me admin).")
+            
+            
+ @datgbot.on(events.NewMessage(incoming=True, chats=frm1)) 
+async def _(event): 
+    if not event.is_private:
+        try:
+            await event.client.send_message(tochnl2, event.message)
+        except:
+            print("TO_CHANNEL ID is wrong or I can't send messages there (make me admin).")           
 
 
 print("Bot has started.")
