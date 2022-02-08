@@ -13,7 +13,7 @@ try:
     apiid = config("APP_ID", cast=int)
     bottoken = config("BOT_TOKEN")
 
-    frm = config("FROM_CHANNEL1", cast=int)
+    frm = config("FROM_CHANNEL", cast=int)
     tochnl1 = config("TO_CHANNEL1", cast=int)
     tochnl2 =config("TO_CHANNEL2",cast=int)
     tochnl3 =config("TO_CHANNEL3",cast=int)
